@@ -14,12 +14,12 @@ class CalorieCalculator
     /**
      * Calculate the MET from an average speed (mph).
      *
-     * @param type  $avgSpeed
+     * @param float  $avgSpeed
      * @param float $activity
      *
-     * @return type
+     * @return float
      */
-    public static function calculateMETFromMPH($avgSpeed, float $activity = self::MET_TYPE_RUNNING)
+    public static function calculateMETFromMPH(float $avgSpeed, float $activity = self::MET_TYPE_RUNNING)
     {
         return round((self::MET_PER_MPH * $avgSpeed) * $activity, 1);
     }
@@ -27,12 +27,12 @@ class CalorieCalculator
     /**
      * Calculate the MET from an average speed (kmph).
      *
-     * @param type  $avgSpeed
+     * @param float  $avgSpeed
      * @param float $activity
      *
-     * @return type
+     * @return float
      */
-    public static function calculateMETFromKMPH($avgSpeed, float $activity = self::MET_TYPE_RUNNING)
+    public static function calculateMETFromKMPH(float $avgSpeed, float $activity = self::MET_TYPE_RUNNING)
     {
         return round((self::MET_PER_KMPH * $avgSpeed) * $activity, 1);
     }
@@ -44,7 +44,7 @@ class CalorieCalculator
      * @param float $weightInKG
      * @param float $timeInHours
      *
-     * @return type
+     * @return int
      */
     public static function calculateCaloriesBurned(float $mets, float $weightInKG, float $timeInHours)
     {

@@ -69,11 +69,11 @@ class TrackPoint
     /**
      * Get either the lat/long array or a specific value from it, if "lat" or "long" is passed in.
      *
-     * @param type $type
+     * @param string $type
      *
-     * @return type
+     * @return string|array
      */
-    public function getPosition($type = null)
+    public function getPosition(string $type = null)
     {
         return (!is_null($type) && array_key_exists($type, $this->position))
                 ? $this->position[$type]

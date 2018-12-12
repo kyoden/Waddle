@@ -19,7 +19,7 @@ class TCXParser extends Parser
     /**
      * Parse the TCX file.
      *
-     * @param type $file
+     * @param string $file
      *
      * @return Activity
      *
@@ -72,11 +72,11 @@ class TCXParser extends Parser
     /**
      * Parse the lap XML.
      *
-     * @param type $lapNode
+     * @param \SimpleXMLElement $lapNode
      *
      * @return \Waddle\Lap
      */
-    protected function parseLap($lapNode)
+    protected function parseLap(\SimpleXMLElement $lapNode)
     {
         $lap = new Lap();
         $lap->setTotalTime((float) $lapNode->TotalTimeSeconds);

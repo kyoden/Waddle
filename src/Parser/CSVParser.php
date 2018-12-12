@@ -122,7 +122,7 @@ class CSVParser extends Parser
      * @param string $header
      * @param array  $headers
      *
-     * @return type
+     * @return string
      */
     private function getHeaderKey(string $header)
     {

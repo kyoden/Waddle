@@ -12,7 +12,7 @@ class PWXParser extends Parser
     /**
      * Parse the PWX file.
      *
-     * @param type $file
+     * @param string $file
      *
      * @return Activity
      *
@@ -70,11 +70,11 @@ class PWXParser extends Parser
     /**
      * Parse the XML of a track point.
      *
-     * @param type $trackPointNode
+     * @param \SimpleXMLElement $trackPointNode
      *
      * @return \Waddle\TrackPoint
      */
-    protected function parseTrackPoint($trackPointNode)
+    protected function parseTrackPoint(\SimpleXMLElement $trackPointNode): TrackPoint
     {
         $point = new TrackPoint();
 
