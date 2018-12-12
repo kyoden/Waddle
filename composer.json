@@ -1,5 +1,5 @@
 {
-    "name": "duckfusion/waddle",
+    "name": "kyoden/waddle",
     "type": "library",
     "description": "PHP Library for parsing running GPS activities and calculating metrics",
     "keywords": ["gps", "tcx", "gpx", "pwx", "running", "parse"],
