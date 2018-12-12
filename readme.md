@@ -89,7 +89,7 @@ Available Activity Metrics/Data
 
 ```$activity->getTotalAscentDescent()``` - This returns an array with the total distance ascended and decended, in metres.
 
-```$activity->getSplits($type)``` - This retrurns an array of the activity splits. The ```$type``` variable should contain either "m" for miles, or "k" for kilometres. The activity will then be split into 1 mile/kilometre points. **Future** - In the future this will split into mini Activity objects, so metrics can be calculated on individual splits as well.
+```$activity->getSplits($distance)``` - This retrurns an array of the activity splits. **Future** - In the future this will split into mini Activity objects, so metrics can be calculated on individual splits as well.
 
 
 Differences Between The Parsers
