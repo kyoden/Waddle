@@ -13,7 +13,7 @@ Installation
 ```javascript
 {
     "require": {
-        "duckfusion/waddle": "dev-master"
+        "kyoden/waddle": "dev-master"
     }
 }
 ```        
@@ -72,6 +72,12 @@ Available Activity Metrics/Data
 ```$activity->getTotalDistance()``` - This returns the total distance of the activity, in metres.
 
 ```$activity->getTotalDuration()``` - This returns the total duration of the activity, in seconds.
+
+```$activity->getAvgHeartRage()`` - This returns the average heart rate of the activity, in bpm.
+
+```$activity->getMaxHeartRage()`` - This returns the maximal heart rate of the activity, in bpm.
+
+```$activity->getCadence()`` - This returns the average cadence of the activity, in ppm.
 
 ```$activity->getAveragePacePerMile()``` - This returns the average pace per mile of the activity, in the format "hh:mm:ss".
 
