@@ -67,7 +67,7 @@ class Activity
     public function getEndTime(string $format = null)
     {
         $endTime = clone $this->startTime;
-        $endTime->addInterval(new \DateTimeInterval(sprintf('P%dS', $this->getTotalDuration())));
+        $endTime->add(new \DateInterval(sprintf('PT%dS', $this->getTotalDuration())));;
 
         return (null !== $format)
                 ? $endTime->format($format)
