@@ -99,13 +99,15 @@ class TCXParser extends Parser
         if (isset($lapNode->Extensions) && $this->nameNSActivityExtensionV2) {
             $extension = $lapNode->Extensions->children($this->nameNSActivityExtensionV2, true)->LX->children($this->nameNSActivityExtensionV2, true);
             if (isset($extension->AvgRunCadence)) {
-                $lap->setCadence((int) $extension->AvgRunCadence);
+                $lap->setCadence(2 * (int) $extension->AvgRunCadence);
             }
         }
 
         // Loop through the track points
-        foreach ($lapNode->Track->Trackpoint as $trackPointNode) {
-            $lap->addTrackPoint($this->parseTrackPoint($trackPointNode));
+        if (isset($lapNode->Track)) {
+            foreach ($lapNode->Track->Trackpoint as $trackPointNode) {
+                $lap->addTrackPoint($this->parseTrackPoint($trackPointNode));
+            }
         }
 
         return $lap;
@@ -142,7 +144,7 @@ class TCXParser extends Parser
                 $point->setSpeed((float) $extensions->Speed);
             }
             if (isset($extensions->RunCadence)) {
-                $point->setCadence((int) $extensions->RunCadence);
+                $point->setCadence(2 * (int) $extensions->RunCadence);
             }
         }
 
