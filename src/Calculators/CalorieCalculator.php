@@ -14,7 +14,7 @@ class CalorieCalculator
     /**
      * Calculate the MET from an average speed (mph).
      *
-     * @param float  $avgSpeed
+     * @param float $avgSpeed
      * @param float $activity
      *
      * @return float
@@ -27,7 +27,7 @@ class CalorieCalculator
     /**
      * Calculate the MET from an average speed (kmph).
      *
-     * @param float  $avgSpeed
+     * @param float $avgSpeed
      * @param float $activity
      *
      * @return float
