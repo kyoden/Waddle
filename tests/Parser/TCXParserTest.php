@@ -62,6 +62,7 @@ class TXCParserTest extends \PHPUnit\Framework\TestCase
         return [
             'run' => ['run'],
             'run_garmin' => ['run_garmin'],
+            'run_without_track' => ['run_without_track'],
         ];
     }
 
@@ -203,8 +204,8 @@ class TXCParserTest extends \PHPUnit\Framework\TestCase
     public function dataLapCadence()
     {
         return [
-            [87, 'run_garmin', 0],
-            [84, 'run_garmin', 2],
+            [174, 'run_garmin', 0],
+            [168, 'run_garmin', 2],
             [84, 'test_2018-11-04_09-12-38', 0],
             [76, 'test_2018-11-04_09-12-38', 1],
         ];
@@ -223,7 +224,7 @@ class TXCParserTest extends \PHPUnit\Framework\TestCase
     public function dataTrackPointCadence()
     {
         return [
-            [93, 'run_garmin', 0, 1],
+            [186, 'run_garmin', 0, 1],
             [0, 'test_2018-11-04_09-12-38', 0, 1],
         ];
     }

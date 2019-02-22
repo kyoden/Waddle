@@ -67,7 +67,7 @@ class Activity
     public function getEndTime(string $format = null)
     {
         $endTime = clone $this->startTime;
-        $endTime->addInterval(new \DateTimeInterval(sprintf('P%dS', $this->getTotalDuration())));
+        $endTime->add(new \DateInterval(sprintf('PT%dS', $this->getTotalDuration())));
 
         return (null !== $format)
                 ? $endTime->format($format)
@@ -174,7 +174,7 @@ class Activity
      *
      * @return int
      */
-    public function getAvgHeartRate(): int
+    public function getAvgHeartRate(): ?int
     {
         $bpm = 0;
         $duration = 0;
@@ -183,7 +183,10 @@ class Activity
             $duration += $lap->getTotalTime();
         }
 
-        return round($bpm / $duration);
+        if ($duration > 0) {
+            return round($bpm / $duration);
+        }
+        return null;
     }
 
     /**

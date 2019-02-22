@@ -253,11 +253,11 @@ class Lap
     /**
      * Set the cadence in lap.
      *
-     * @param type $val
+     * @param int $val
      *
      * @return $this
      */
-    public function setCadence($val): Lap
+    public function setCadence(int $val): Lap
     {
         $this->cadence = $val;
 

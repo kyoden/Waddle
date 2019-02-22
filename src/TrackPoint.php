@@ -115,7 +115,7 @@ class TrackPoint
      *
      * @return int
      */
-    public function getHeartRate(): int
+    public function getHeartRate(): ?int
     {
         return $this->heartRate;
     }
