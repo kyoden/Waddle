@@ -110,6 +110,16 @@ class TCXParser extends Parser
             }
         }
 
+        if ($lap->getAvgHeartRate() === null) {
+            $heartRate = [];
+            foreach ($lap->getTrackPoints() as $trackPoint) {
+                /** @var TrackPoint $trackPoint */
+                $heartRate[] = $trackPoint->getHeartRate();
+            }
+            $lap->setAvgHeartRate(array_sum($heartRate) / count($heartRate));
+            $lap->setMaxHeartRate(max($heartRate));
+        }
+
         return $lap;
     }
 
