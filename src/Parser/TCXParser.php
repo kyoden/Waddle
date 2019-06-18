@@ -48,7 +48,9 @@ class TCXParser extends Parser
         // Now parse the laps
         // There should only be 1 lap, but they are stored in an array just in case this ever changes
         foreach ($activityNode->Lap as $lapNode) {
-            $activity->addLap($this->parseLap($lapNode));
+            if ($lap = $this->parseLap($lapNode)) {
+                $activity->addLap($lap);
+            }
         }
 
         // Finally return the activity object
@@ -108,6 +110,10 @@ class TCXParser extends Parser
             foreach ($lapNode->Track->Trackpoint as $trackPointNode) {
                 $lap->addTrackPoint($this->parseTrackPoint($trackPointNode));
             }
+        }
+
+        if (0 === count($lap->getTrackPoints())) {
+            return null;
         }
 
         if ($lap->getAvgHeartRate() === null) {
