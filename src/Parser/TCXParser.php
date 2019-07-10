@@ -122,8 +122,11 @@ class TCXParser extends Parser
                 /** @var TrackPoint $trackPoint */
                 $heartRate[] = $trackPoint->getHeartRate();
             }
-            $lap->setAvgHeartRate(array_sum($heartRate) / count($heartRate));
-            $lap->setMaxHeartRate(max($heartRate));
+            $heartRate = array_filter($heartRate);
+            if (count($heartRate)) {
+                $lap->setAvgHeartRate(array_sum($heartRate) / count($heartRate));
+                $lap->setMaxHeartRate(max($heartRate));
+            }
         }
 
         return $lap;
